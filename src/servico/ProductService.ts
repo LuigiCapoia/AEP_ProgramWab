@@ -39,7 +39,15 @@ class ProductService {
             preco: product.preco,
             valor_estoque: product.qtde * product.preco
     }))
+} 
+public getStockPrice() {
+    const products = fs.readFileSync('products.json')
+    const jsondata = JSON.parse(products);
+    let stock = jsondata.reduce((aux, product) => {
+        const stock_value = product.qtde * product.preco
+        return aux + stock_value
+}, 0)
+return ({ValorTotalEstoque: stock})
 }
-
 }
 export default new ProductService

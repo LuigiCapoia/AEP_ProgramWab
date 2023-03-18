@@ -20,6 +20,10 @@ class ProductController{
         res.status(200).json(stock)
     }
 
+    public getStockPrice(req, res){
+        const stock = productService.getStockPrice()
+        res.status(200).json(stock)
+    }
 }
 
 export default new ProductController()

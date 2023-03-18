@@ -13,7 +13,7 @@ routes.get('/products', productController.getAllProducts)
 routes.get('/products-stock', productController.getStock)
 routes.get('/health-check', healthCheckController.check)
 routes.get('/users', userController.list)
-
+routes.get('/products-stock-price',productController.getStockPrice)
 // 17 - Estamos exportando a constante routes
 export default routes
 
